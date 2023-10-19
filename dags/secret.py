@@ -2,8 +2,15 @@ from airflow import models
 import datetime
 from airflow.operators import bash
 
+default_dag_args = {
+    "start_date": datetime.datetime(2023, 10, 1),
+    "retries": 1,
+    "retry_delay": datetime.timedelta(minutes=5)
+}
+
 with models.DAG(
     "first_dag",
+    default_args=default_dag_args,
     schedule_interval=datetime.timedelta(weeks=4)
 ) as dag:
 
