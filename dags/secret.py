@@ -1,4 +1,6 @@
 from airflow import models
+import datetime
+from airflow.operators import bash
 
 with models.DAG(
     "first_dag",
