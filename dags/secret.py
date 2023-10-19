@@ -9,7 +9,7 @@ default_dag_args = {
 }
 
 with models.DAG(
-    "first_dag",
+    "secret_dag",
     default_args=default_dag_args,
     schedule_interval=datetime.timedelta(weeks=4)
 ) as dag:
